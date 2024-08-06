@@ -34,11 +34,11 @@ int main() {
     cout << "Bubble Sort: ";
     bubbleSort(a, n);
 
-    int b[] = {3, 5, 2, 7, 1}; // Re-initialize array for next sort
+    int b[] = {3, 5, 2, 7, 1}; 
     cout << "Selection Sort: ";
     selectionSort(b, n);
 
-    int c[] = {3, 5, 2, 7, 1}; // Re-initialize array for next sort
+    int c[] = {3, 5, 2, 7, 1}; 
     cout << "Insertion Sort: ";
     insertionSort(c, n);
 
