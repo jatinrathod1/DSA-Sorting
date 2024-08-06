@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+void bubbleSort(int a[], int n) {
+    // Bubble sort - Largest element moves to the end
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
+
+void selectionSort(int a[], int n) {
+    // Selection sort - Smallest element moves to the front
+    for (int i = 0; i < n - 1; i++) {
+        int smallest = i;
+        for (int j = i + 1; j < n; j++) {
+            if (a[smallest] > a[j]) {
+                smallest = j;
+            }
+        }
+        int temp = a[smallest];
+        a[smallest] = a[i];
+        a[i] = temp;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << "s ";
+    }
+    cout << endl;
+}
+
+void insertionSort(int a[], int n) {
+    // Insertion sort - Elements to the left are sorted
+    for (int i = 1; i < n; i++) {
+        int current = a[i];
+        int j = i - 1;
+        while (j >= 0 && a[j] > current) {
+            a[j + 1] = a[j];
+            j--;
+        }
+        a[j + 1] = current;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << "i ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int a[] = {3, 5, 2, 7, 1};
+    int n = sizeof(a) / sizeof(a[0]);
+
+    cout << "Bubble Sort: ";
+    bubbleSort(a, n);
+
+    int b[] = {3, 5, 2, 7, 1}; 
+    cout << "Selection Sort: ";
+    selectionSort(b, n);
+
+    int c[] = {3, 5, 2, 7, 1};
+    cout << "Insertion Sort: ";
+    insertionSort(c, n);
+
+    return 0;
+}
